@@ -16,10 +16,10 @@
 			}
 		} 
  	*/		
-		String id = (String)session.getAttribute("id");//0520 세션로그인
-		if(id == null || id.isEmpty()){
-			response.sendRedirect("../login/login.jsp");
-		}
+//		String id = (String)session.getAttribute("id");//0520 세션로그인 0527 필터
+//		if(id == null || id.isEmpty()){
+//			response.sendRedirect("../login/login.jsp");
+//		} 
 	//}0520 쿠키로그인
 %>
 <!DOCTYPE html>
@@ -55,6 +55,16 @@
 <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/plugins/pace/pace.min.css">
   <!-- Google Font -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+      $(function() {
+		$(".treeview-menu li a").on("click",function(){
+			$(".treeview-menu li").removeClass();
+			$(this).parent().addClass("active");
+		});
+      });
+</script>
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -62,7 +72,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.jsp" class="logo">
+    <a href="../main/index.jsp" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -171,7 +181,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<%= request.getContextPath() %>/resources/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><%=id %></span>
+              <span class="hidden-xs"><%-- <%=id %> 0527 필터--%></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -256,8 +266,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="../main/index.jsp"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -370,15 +379,15 @@
           	<li><a href="../guestbook/list.jsp"><i class="fa fa-circle-o"></i> 방명록</a></li>
           	<li><a href="../examples/chosun.jsp"><i class="fa fa-circle-o"></i> 조선일보</a></li>
           	<li><a href="../examples/donga.jsp"><i class="fa fa-circle-o"></i> 동아일보</a></li>
-            <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li><a href="invoice.jsp"><i class="fa fa-circle-o"></i> Invoice</a></li>
+            <li><a href="profile.jsp"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li><a href="../login/login.jsp"><i class="fa fa-circle-o"></i> Login</a></li>
+            <li><a href="../login/register.jsp"><i class="fa fa-circle-o"></i> Register</a></li>
+            <li><a href="lockscreen.jsp"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+            <li><a href="404.jsp"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+            <li><a href="500.jsp"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+            <li><a href="../examples/blank.jsp"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+            <li><a href="pace.jsp"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
         <li class="treeview">
