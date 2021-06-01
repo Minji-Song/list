@@ -65,3 +65,17 @@ html, body {
   border: 1px solid;
   border-color: #E5E5E5 #D3D3D3 #B9C1C6;
 }
+
+#guestList {
+    width: 100%;
+}
+
+#guestList thead td {
+	border-bottom: 1px solid #BDBDBD;
+	text-align: center;
+}
+
+#guestList tbody td {
+	text-align: center;
+}
+

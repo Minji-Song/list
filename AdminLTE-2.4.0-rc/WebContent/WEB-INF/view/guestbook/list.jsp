@@ -108,6 +108,7 @@ function insertPopup( ) {
 		</form>
 		<input type="button" onclick="insertPopup()" value="메시지 남기기" />
 		<hr>
+		
 
         <!-- /.box-body -->
         <div class="box-footer">
@@ -132,6 +133,7 @@ function insertPopup( ) {
 			</c:forEach>
 		
 		</c:if>
+        </div>
         </div>
         <!-- /.box-footer-->
       </div>

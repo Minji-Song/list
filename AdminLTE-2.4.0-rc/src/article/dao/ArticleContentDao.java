@@ -60,4 +60,13 @@ public class ArticleContentDao {
 			return pstmt.executeUpdate();
 		}
 	}
+	
+	// 게시글 삭제
+	public int delete(Connection conn, int no) throws SQLException {
+		try (PreparedStatement pstmt = 
+				conn.prepareStatement("delete from article_content where article_no = ?")) {
+			pstmt.setInt(1, no);
+			return pstmt.executeUpdate();
+		}
+	}
 }
